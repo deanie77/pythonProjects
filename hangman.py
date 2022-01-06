@@ -8,7 +8,7 @@ def get_valid_word(words):
     while '-' in word or ' ' in word:
         word = random.choice(words)
 
-    return word
+    return word.upper()
 
 
 def hangman():
@@ -32,10 +32,14 @@ def hangman():
             used_letters.add(user_letter)
             if user_letter in word_letters:
                 word_letters.remove(user_letter)
+                if word_letters == set():
+                    word_list = [letter if letter in used_letters else '-' for letter in word]
         elif user_letter in used_letters:
             print('You have already used the letter. Please try again.')
         else:
             print('You din\'t type in a valid letter.')
+
+    print(''.join(word_list))
 
 
 hangman()
