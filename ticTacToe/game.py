@@ -103,8 +103,8 @@ def play(game, x_player, o_player, print_game=True):
             # after we made our move, we need to alternate letters
             letter = 'O' if letter == 'X' else 'X'
 
-        if print_game:
-            print('it\'s a tie!')
+    if print_game:
+        print('it\'s a tie!')
 
 
 if __name__ == '__main__':
